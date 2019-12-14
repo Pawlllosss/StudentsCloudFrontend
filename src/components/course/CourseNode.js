@@ -11,7 +11,8 @@ const CourseNode = (props) => {
     const [description, setDescription] = React.useState(props.course.description);
 
     return (
-        <ListItem key={props.course.id}>
+        <div key={props.course.id}>
+        <ListItem >
             <ListItemText
                 primary={name}
                 secondary={description}
@@ -20,9 +21,9 @@ const CourseNode = (props) => {
                 <CourseDeleteDialog course={props.course} fetchCourses={props.fetchCourses}/>
                 <CourseEditDialog course={props.course} fetchCourses={props.fetchCourses}/>
             </ListItemSecondaryAction>
-            <CourseAttendees attendees = {props.course.courseAttendees} />
         </ListItem>
-
+            {props.course.courseAttendees.length > 0 && <CourseAttendees attendees = {props.course.courseAttendees} /> }
+        </div>
     );
 };
 
