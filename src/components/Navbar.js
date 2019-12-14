@@ -32,7 +32,7 @@ class Navbar extends React.Component {
                     <Toolbar>
                         <Typography variant="title" color="inherit">StudentsApp</Typography>
                         <List component='nav'>
-                            <ListItem component='div'>
+                            <ListItem key='nav' component='div'>
                                 {this.navbarLinks()}
                             </ListItem>
                         </List>

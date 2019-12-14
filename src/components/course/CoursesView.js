@@ -3,6 +3,7 @@ import axios from 'axios';
 import {List, Paper, Typography} from '@material-ui/core';
 import CourseNode from "./CourseNode";
 import {API_BASE_PATH, COURSE_API_PATH} from "../../api/ApiConstants";
+import CourseCreateDialog from "./CourseCreateDialog";
 
 class CoursesView extends React.Component {
 
@@ -40,6 +41,7 @@ class CoursesView extends React.Component {
                 <div style={{width: "70%"}}>
                     <Fragment >
                         <Typography variant="h3" align="center" >Courses</Typography>
+                        <CourseCreateDialog fetchCourses={this.fetchCourses} />
                         <Paper elevation={1}>
                             <List>{courseNodes}</List>
                         </Paper>
