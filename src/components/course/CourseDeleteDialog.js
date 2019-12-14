@@ -40,7 +40,6 @@ const CourseDeleteDialog = (props) => {
         <div style={divStyle}>
             <IconButton
                 color="inherit"
-                component={Link}
                 onClick={handleClickOpen}
             >
                 <DeleteIcon />
