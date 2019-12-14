@@ -2,6 +2,7 @@ import React from 'react';
 import {ListItem, ListItemText} from "@material-ui/core";
 import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction/ListItemSecondaryAction";
 import StudentDeleteDialog from "./StudentDeleteDialog";
+import StudentEditDialog from "./StudentEditDialog";
 
 const StudentNode = (props) => {
 
@@ -16,7 +17,7 @@ const StudentNode = (props) => {
                 />
                 <ListItemSecondaryAction>
                     <StudentDeleteDialog student = {props.student} fetchStudents={props.fetchStudents} />
-                    {/*<StudentEditDialog student = {props.student} fetchStudents={props.fetchStudents} />*/}
+                    <StudentEditDialog student = {props.student} fetchStudents={props.fetchStudents} />
                 </ListItemSecondaryAction>
             </ListItem>
         </div>
