@@ -9,12 +9,12 @@ import {
     DialogTitle,
     IconButton,
 } from '@material-ui/core';
-import {Link} from "react-router-dom";
 import {DeleteOutlined as DeleteIcon} from "@material-ui/icons";
 
 const CourseDeleteDialog = (props) => {
 
-    const courseName = props.course.name;
+    const firstName = props.student.firstName;
+    const lastName = props.student.lastName;
 
     const [isOpen, setIsOpen] = React.useState(false);
 
@@ -28,8 +28,8 @@ const CourseDeleteDialog = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.delete(props.course._links.delete.href)
-            .finally(() => props.fetchCourses());
+        axios.delete(props.student._links.delete.href)
+            .finally(() => props.fetchStudents());
 
         setIsOpen(false);
     };
@@ -45,10 +45,10 @@ const CourseDeleteDialog = (props) => {
                 <DeleteIcon />
             </IconButton>
             <Dialog open={isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Delete course</DialogTitle>
+                <DialogTitle id="form-dialog-title">Delete student</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Are you sure you want to delete the following course: {courseName}?
+                        Are you sure you want to delete the following student: {firstName + " " + lastName}?
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
