@@ -1,6 +1,8 @@
 import React from 'react';
 import {ListItem, ListItemText} from "@material-ui/core";
 import CourseAttendees from "./CourseAttendees";
+import CourseDeleteDialog from "./CourseDeleteDialog";
+import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction/ListItemSecondaryAction";
 
 const CourseNode = (props) => {
 
@@ -13,6 +15,9 @@ const CourseNode = (props) => {
                 primary={name}
                 secondary={description}
             />
+            <ListItemSecondaryAction>
+                <CourseDeleteDialog course={props.course} fetchCourses={props.fetchCourses}/>
+            </ListItemSecondaryAction>
             <CourseAttendees attendees = {props.course.courseAttendees} />
         </ListItem>
 

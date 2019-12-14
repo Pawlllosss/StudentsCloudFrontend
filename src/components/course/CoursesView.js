@@ -28,7 +28,7 @@ class CoursesView extends React.Component {
     getCourseNodes() {
         const courses = this.state.courses;
         const courseNodes = courses.map(course => (
-            <CourseNode course={course} />
+            <CourseNode key={course.id + "node"} course={course} fetchCourses={this.fetchCourses} />
         ));
         return courseNodes;
     }
